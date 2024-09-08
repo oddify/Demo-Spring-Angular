@@ -1,0 +1,65 @@
+<div style="text-align: center">
+
+<H1>Welcome to {{title}}!</H1>
+
+  <a routerLink="/products"
+     class="btn"
+     [ngClass]="{ 'btn-success': !isActive('/products'), 'btn-dark': isActive('/products') }">
+    Products
+  </a>
+  <a routerLink="/product/details"
+     class="btn"
+     [ngClass]="{ 'btn-success': !isActive('/product/details'), 'btn-dark': isActive('/product/details') }">
+    Product details
+  </a>
+
+
+<!--  <app-demo-pipes></app-demo-pipes>-->
+<!--  <app-stuctural-directives></app-stuctural-directives>-->
+<!--  <app-child (childEvent)="message=$event" [parentData] = "name"></app-child>-->
+<!--  <br>-->
+<!--  Dispalying data from child component-->
+<!--  <br>-->
+<!--  <h2>{{message}}</h2>-->
+
+</div>
+<h1>Routing and navigation</h1>
+<nav>
+  <a routerLink="/employees"
+     class="btn"
+     [ngClass]="{ 'btn-success': !isActive('/employees'), 'btn-dark': isActive('/employees') }">
+    Employees
+  </a>
+
+  <a routerLink="/departments"
+     class="btn"
+     [ngClass]="{ 'btn-success': !isActive('/departments'), 'btn-dark': isActive('/departments') }">
+    Departments
+  </a>
+
+</nav>
+<!--Routing and navigation-->
+<router-outlet></router-outlet>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<a href="#" class="btn btn-primary">Primary Button</a>-->
+<!--<a href="#" class="btn btn-secondary">Secondary Button</a>-->
+<!--<a href="#" class="btn btn-success">Success Button</a>-->
+<!--<a href="#" class="btn btn-danger">Danger Button</a>-->
+<!--<a href="#" class="btn btn-warning">Warning Button</a>-->
+<!--<a href="#" class="btn btn-info">Info Button</a>-->
+<!--<a href="#" class="btn btn-light">Light Button</a>-->
+<!--<a href="#" class="btn btn-dark">Dark Button</a>-->
+<!--<a href="#" class="btn btn-link">Link Button</a>-->
+

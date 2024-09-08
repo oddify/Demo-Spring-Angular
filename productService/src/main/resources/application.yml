@@ -1,0 +1,35 @@
+#spring.application.name=productService
+
+
+
+server:
+  port: 4727
+
+
+spring:
+  application:
+    name: productService
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/product_service
+    username: product_service_user
+    password: password
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+#    enable web alpplication logs
+
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  activemq:
+    broker-url:
+
+#print sql application.yml
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: debug
+    web: trace
