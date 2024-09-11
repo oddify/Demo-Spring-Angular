@@ -1,6 +1,8 @@
 <h2>Product Details</h2>
 <ul>
 </ul>
+<div *ngIf="products">
+
 <table class="table table-hover table-striped table-bordered align-middle">
   <thead class="table-dark">
   <tr>
@@ -17,4 +19,5 @@
   </tr>
   </tbody>
 </table>
+</div>
 <h2> {{ errorMsg }}</h2>

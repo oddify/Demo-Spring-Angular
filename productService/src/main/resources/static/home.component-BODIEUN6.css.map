@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["angular:styles/component:css;975d91c99335c0668e8211ea3d8af622bb8cc0087cf140d2ec221b9aed390909;E:/Git public/Demo Spring Angular/Demo-Spring-Angular/AngularFrontend/OddStore/src/app/home/home.component.ts"],
+  "sourcesContent": ["\n    div{ color: mediumvioletred}\n    .orange-text {\n      color: orange;\n    }\n    .text-success {\n      color: green;\n    }\n    .text-danger {\n      color: red;\n    }\n    .text-special {\n      font-style: italic;\n    }\n  "],
+  "mappings": "AACI,IAAK,MAAO,OAAe,CAC3B,CAAC,YACC,MAAO,MACT,CACA,CAAC,aACC,MAAO,KACT,CACA,CAAC,YACC,MAAO,GACT,CACA,CAAC,aACC,WAAY,MACd",
+  "names": []
+}

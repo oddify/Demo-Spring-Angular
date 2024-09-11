@@ -4,6 +4,7 @@ import {Router,ActivatedRoute,ParamMap} from "@angular/router";
 @Component({
   selector: 'app-department-list',
   template: `
+    <div *ngIf="departments">
     <ul>
       <li (click)="onSelect(department)" *ngFor="let department of departments">
         <!--        <a class="badge bg-success"-->
@@ -13,10 +14,10 @@ import {Router,ActivatedRoute,ParamMap} from "@angular/router";
 
         <span class="badge bg-success" [class.bg-black]="isSelected(department)">
           {{ department.id }}</span> <span class="badge bg-dark">{{ department.name }}</span>
-
       </li>
-
     </ul>
+    </div>
+
   `,
   styles: ``
 })

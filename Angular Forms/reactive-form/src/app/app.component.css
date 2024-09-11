@@ -1,0 +1,32 @@
+.json-display {
+  background-color: #000;  /* Black background */
+  color: #fff;             /* Default text color */
+  padding: 15px;
+  border-radius: 5px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-family: monospace;
+  overflow: auto;
+}
+
+/* Apply syntax highlighting using CSS classes */
+.json-display .string {
+  color: #8bc34a; /* Green for strings */
+}
+
+.json-display .number {
+  color: #f44336; /* Red for numbers */
+}
+
+.json-display .boolean {
+  color: #03a9f4; /* Blue for booleans */
+}
+
+.json-display .null {
+  color: #ff5722; /* Orange for null */
+}
+
+.json-display .key {
+  color: #ffeb3b; /* Yellow for keys */
+}
+

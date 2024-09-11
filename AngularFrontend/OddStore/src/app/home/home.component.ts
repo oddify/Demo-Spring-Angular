@@ -5,6 +5,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: '[app-home]',
   template: `
+    <H1>Angular Interpolation</H1>
     <div> Welcome {{ name }}</div>
     <h2> {{ 2 + 2 }}</h2>
     <h2 class=orange-text>{{ "Welcome " + name }}</h2>
@@ -18,7 +19,7 @@ import { Component } from '@angular/core';
     <h2>{{ siteUrl }}</h2>
 
     <!--   Property binding-->
-    <!--    <input type="text" value="Omkar"> <br><br>-->
+    <!--   <input type="text" value="Omkar"> <br><br>-->
     <!--   Attributes and properties are not the same-->
     <!--   Attributes - HTML -->
     <!--   properties are defined by DOM (Document object model)-->
@@ -26,6 +27,7 @@ import { Component } from '@angular/core';
 
     <h2> Conditional class attrib</h2>
     <input [id]="myId" type="text" value="Name" (input)="enableTest()">
+
     <input [disabled]="isDisabled" id="test2" type="text" value="Omkar">
     <h2 class = text-success> Omkar </h2>
     <h2  [class] = "classSuccess" class="text-danger"> Oddify </h2>
@@ -80,9 +82,6 @@ export class HomeComponent {
   }
 
   constructor() {
-  }
-
-  ngOnInit(){
   }
 
   greetUser(){

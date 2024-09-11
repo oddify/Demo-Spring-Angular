@@ -15,12 +15,13 @@ import java.util.Optional;
 public class ProductServiceImpl implements ProductService {
 
     ProductRepository productRepository;
-    CategoryRepo categoryRepo;
+
+    CategoryService categoryService;
 
     @Autowired
-    public ProductServiceImpl(ProductRepository productRepository,CategoryRepo categoryRepo){
+    public ProductServiceImpl(ProductRepository productRepository,CategoryService categoryService){
         this.productRepository = productRepository;
-        this.categoryRepo = categoryRepo;
+        this.categoryService = categoryService;
 
     }
 
@@ -37,30 +38,64 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public Product createNewProduct(Product product) {
-        Optional<Category> category  = categoryRepo.findByName(product.getCategory().getName());
 
-        if(category.isEmpty()){
-           Category newCategory = categoryRepo.save(product.getCategory());
-           product.setCategory(newCategory);
-        }else {
-            product.setCategory(category.get());
-        }
+        Category category = categoryService.CreateIfNotExist(product.getCategory());
+        product.setCategory(category);
 
         return productRepository.save(product);
     }
 
     @Override
     public Product replaceProduct(Long id, Product product) {
-        return null;
+        Optional<Product> existingProduct  = productRepository.findById(id);
+        if(existingProduct.isPresent()){
+           return this.createNewProduct(product);
+        }
+        else {
+            throw new RuntimeException("Product Not found");
+        }
     }
 
     @Override
     public Product updateProduct(Long id, Product product) {
-        return null;
+        Optional<Product> existingProduct  = productRepository.findById(id);
+        if(existingProduct.isEmpty()){
+            throw new RuntimeException("Product not found");
+        }
+
+        Product updatedProduct = existingProduct.get();
+
+        if(product.getCategory() != null){
+            Category category = categoryService.CreateIfNotExist(product.getCategory());
+            updatedProduct.setCategory(category);
+        }
+
+        if(product.getDescription() != null){
+            updatedProduct.setDescription(product.getDescription());
+        }
+
+        if(product.getImageUrl() != null){
+            updatedProduct.setImageUrl(product.getImageUrl());
+        }
+
+        if(product.getName() != null){
+            updatedProduct.setName(product.getName());
+        }
+
+        if (product.getPrice() != null) {
+            updatedProduct.setPrice(product.getPrice());
+        }
+
+        if(product.getQuantity() != null){
+            updatedProduct.setQuantity(product.getQuantity());
+        }
+
+        return productRepository.save(updatedProduct);
     }
 
     @Override
     public Product deleteProduct(Long id) {
-        return null;
+        productRepository.deleteById(id);
+        return new Product();
     }
 }

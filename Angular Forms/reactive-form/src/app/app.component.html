@@ -1,0 +1,42 @@
+<div class="container-fluid">
+  <h2> Registration From</h2>
+  <form [formGroup]="registrationFrom">
+    <div class="form-group">
+      <label>Username</label>
+      <input formControlName="userName" type="text" class="form-control">
+    </div>
+    <div class="form-group" >
+      <label>Password</label>
+      <input formControlName="password" type="password" class="form-control">
+    </div>
+
+    <div class="form-group" >
+      <label>Confirm Password</label>
+      <input formControlName="confirmPassword" type="password" class="form-control">
+    </div>
+
+    <div formGroupName ="address">
+      <div class="form-group">
+        <label>City</label>
+        <input formControlName="city" type="text" class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label>State</label>
+        <input formControlName="state" type="text" class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label>Postal code</label>
+        <input formControlName="postalCode" type="text" class="form-control">
+      </div>
+    </div>
+    <button class="btn btn-primary" type="submit">Register</button>
+    <button (click)="loadAPIData()" class="btn btn-secondary ml-2" type="button">Load API Data</button>
+  </form>
+
+  <div class="col-md-6">
+    <h2>Formatted JSON Dark</h2>
+    <pre class="json-display p-3 border rounded">{{ registrationFrom.value | json }}</pre>
+  </div>
+</div>

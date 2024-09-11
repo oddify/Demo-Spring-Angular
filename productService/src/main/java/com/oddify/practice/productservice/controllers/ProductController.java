@@ -26,28 +26,50 @@ public class ProductController {
     @PostMapping
     public ResponseEntity<Product> createProduct(@RequestBody Product product){
         Product newProduct = productService.createNewProduct(product);
-
         return new ResponseEntity<>(newProduct, HttpStatus.CREATED);
     }
 
     @GetMapping
     public ResponseEntity<List<Product>> getProducts(){
         List<Product> list = productService.getAllProducts();
-
         return new ResponseEntity<>(list, HttpStatus.OK);
 
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<Product> getProduct(@PathVariable Long id){
-
         Product p = productService.getProductById(id);
-
         if(p == null){
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
-
         return  new ResponseEntity<>(p, HttpStatus.OK);
-
     }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Product> replaceProduct(@PathVariable Long id ,@RequestBody Product product) {
+        Product p = productService.replaceProduct(id, product);
+        if (p == null) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        return new ResponseEntity<>(p, HttpStatus.OK);
+    }
+
+    @PatchMapping("/{id}")
+    public ResponseEntity<Product> updateProduct(@PathVariable Long id, @RequestBody Product product){
+        Product p = productService.updateProduct(id, product);
+        if (p == null) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        return new ResponseEntity<>(p, HttpStatus.OK);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Product> deleteProduct(@PathVariable Long id){
+        Product p = productService.deleteProduct(id);
+        if (p == null) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        return new ResponseEntity<>(p, HttpStatus.OK);
+    }
+
 }

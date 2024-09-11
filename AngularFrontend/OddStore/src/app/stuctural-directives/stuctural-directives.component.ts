@@ -3,7 +3,8 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-stuctural-directives',
   template: `
-    <hr>Stuctural directives<hr>
+    <hr>Stuctural directives
+    <hr>
     <h4> *ngIf </h4>
     <hr>
     <input type="checkbox" [(ngModel)]="isdisplay"> basics of angular
@@ -33,23 +34,23 @@ import { Component } from '@angular/core';
 
     <hr>
     <input type="checkbox" [(ngModel)]="isdisplay3">
-     *ngFor
-    <div *ngIf="isdisplay3">
+    *ngFor
+    <div *ngIf="isdisplay3 && colors">
 
-      <div *ngFor = "let color of colors; index as i; first as f ; odd as o" >
-          <li>
-           {{i}}  {{color}} {{f}} {{o}}
-          </li>
-  <!--      {{color}}-->
+      <div *ngFor="let color of colors; index as i; first as f ; odd as o">
+        <li>
+          {{ i }}  {{ color }} {{ f }} {{ o }}
+        </li>
+        <!--      {{color}}-->
       </div>
     </div>
 
-        <br>
+    <br>
     <hr>
-<!--    <input type="checkbox" [(ngModel)]="isdisplay4"> component interaction-->
-<!--    <div *ngIf="isdisplay4">-->
+    <!--    <input type="checkbox" [(ngModel)]="isdisplay4"> component interaction-->
+    <!--    <div *ngIf="isdisplay4">-->
 
-<!--    </div>-->
+    <!--    </div>-->
   `,
   styleUrl: './stuctural-directives.component.css'
 })

@@ -8,6 +8,7 @@ import {ProductService} from "../services/product.service";
     Product list
 
     <h2>{{errorMsg}} </h2>
+    <div *ngIf="products">
     <table [ngClass]="messageClasses">
       <thead >
         <th>Id</th>
@@ -21,6 +22,7 @@ import {ProductService} from "../services/product.service";
         </tr>
       </tbody>
     </table>
+    </div>
     Angular heavily relies on RxJS for handling asynchronous operations,
     such as handling HTTP requests, event handling, and managing state changes.
   `,
@@ -35,8 +37,8 @@ import {ProductService} from "../services/product.service";
   `]
 })
 export class ProductListComponent {
-  public products : any[];
-  public errorMsg: any;
+  public products : any[] = [1,2];
+  public errorMsg: any = "error";
 
   messageClasses: any = {
     'table': true,

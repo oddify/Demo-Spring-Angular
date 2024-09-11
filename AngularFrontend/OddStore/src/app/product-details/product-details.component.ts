@@ -9,7 +9,7 @@ import {ProductService} from "../services/product.service";
 export class ProductDetailsComponent {
 
   public products: any[];
-  public errorMsg: any;
+  public errorMsg: any="error";
 
 
   constructor(private _productService: ProductService) {
