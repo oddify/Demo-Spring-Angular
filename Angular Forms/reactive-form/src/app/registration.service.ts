@@ -11,5 +11,5 @@ export class RegistrationService {
   register(userData:JSON){
     return this._http.post<any>(this._url,userData,);
   }
-  
+
 }

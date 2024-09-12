@@ -1,0 +1,80 @@
+<div class="container-fluid">
+  <h2>Product Form</h2>
+  <form (ngSubmit)="onSubmit()" [formGroup]="productFrom">
+    <div class="row">
+      <div class="form-group col-6">
+        <label>Product Name</label>
+        <input [class.is-invalid]="productname['invalid'] && productname['touched']" aria-label="First name"
+               class="form-control m-1 mb-1"
+               formControlName="name" type="text">
+        <small [class.d-none]="!(productname['invalid'] && productname['touched'])" class="text-danger">Product name is
+          required</small>
+      </div>
+
+      <div class="col-6" formGroupName="category">
+        <div class="form-group">
+          <label>Product Category</label>
+          <input [class.is-invalid]="categoryName['invalid'] && categoryName['touched']" class="form-control m-1 mb-1"
+                 formControlName="name" type="text">
+          <small [class.d-none]="!(categoryName['invalid'] && categoryName['touched'])" class="text-danger">Product
+            quantity is required</small>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row">
+      <div class="form-group col-6">
+        <label>Price</label>
+        <input [class.is-invalid]="price['invalid'] && price['touched']" class="form-control m-1"
+               formControlName="price"
+               type="number">
+        <small [class.d-none]="!(price['invalid'] && price['touched'])" class="text-danger">Product price is
+          required</small>
+      </div>
+
+      <div class="form-group col-6">
+        <label>quantity</label>
+        <input [class.is-invalid]="quantity['invalid'] && quantity['touched']" class="form-control m-1 mb-1"
+               formControlName="quantity" type="number">
+        <small [class.d-none]="!(quantity['invalid'] && quantity['touched'])" class="text-danger">Product quantity is
+          required</small>
+      </div>
+    </div>
+    <div class="row">
+
+      <div class="form-group col-12">
+        <label>Product Description</label>
+        <input [class.is-invalid]="description['invalid'] && description['touched']" class="form-control m-1"
+               formControlName="description" type="text">
+        <small [class.d-none]="!(description['invalid'] && description['touched'])" class="text-danger">Product
+          description is required</small>
+      </div>
+
+      <div class="form-group col-6">
+        <label>Img URL</label>
+        <input [class.is-invalid]="imageUrl['invalid'] && imageUrl['touched']" class="form-control m-1 mb-1"
+               formControlName="imageUrl"
+               type="text">
+        <small [class.d-none]="!(imageUrl['invalid'] && imageUrl['touched'])" class="text-danger">Product quantity is
+          required</small>
+      </div>
+    </div>
+    <button class="btn btn-primary mt-3 col-3" type="submit">Save</button>
+
+  </form>
+  <div>
+    <pre class="bg-dark text-light rounded mt-3">{{ productFrom.value|json }}</pre>
+  </div>
+</div>
+<!--// {-->
+<!--//   "name": "Nibosi Mens watch",-->
+<!--//   "description": "A modern-classic Watch for men",-->
+<!--//   "price": 1500.0,-->
+<!--//   "quantity": 8,-->
+<!--//   "imageUrl": "https://m.media-amazon.com/images/I/61uPtGXmuwL._AC_UY1100_.jpg",-->
+<!--//   "category": {-->
+<!--//-->
+<!--//   "name": "Mens shirt"-->
+<!--// }-->
+<!--// }-->

@@ -18,7 +18,7 @@ export class ProductDetailsComponent {
 
   ngOnInit() {
     this._productService.getProducts()
-      .subscribe(data => this.products = data
-        , error => this.errorMsg = error.message);
+      .subscribe(data => this.products = data,
+          error => this.errorMsg = error.message);
   }
 }

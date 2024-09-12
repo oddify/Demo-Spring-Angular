@@ -12,7 +12,7 @@ import java.util.List;
 @RestController
 @RequestMapping("products")
 //@CrossOrigin("http://localhost:4200/")
-@CrossOrigin(origins="http://localhost:4200")
+@CrossOrigin(origins="http://localhost:4200,http://localhost:9890")
 
 public class ProductController {
 

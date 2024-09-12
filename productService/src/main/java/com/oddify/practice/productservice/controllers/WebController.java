@@ -8,7 +8,6 @@ public class WebController {
 
 //    @GetMapping(value = "/frontend")
 @GetMapping(value = "/{path:[^\\.]*}")
-
     public String forwardToIndex() {
 
         // Forward to index.html for Angular routing to work

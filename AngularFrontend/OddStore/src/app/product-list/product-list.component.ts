@@ -56,4 +56,5 @@ export class ProductListComponent {
       .subscribe(data => this.products = data
                   , error => this.errorMsg = error.message);
   }
+
 }

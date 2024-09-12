@@ -1,0 +1,43 @@
+<h2>Product Details</h2>
+<ul>
+</ul>
+<div *ngIf="products">
+
+  <table class="table table-hover table-striped table-bordered align-middle">
+    <thead class="table-dark">
+    <tr>
+      <th>Product ID</th>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Description</th>
+      <th>Category</th>
+      <th>Quantity</th>
+      <th>Product Img</th>
+      <th>
+<!--        <button class="btn btn-success"  >Add</button>-->
+      <nav>
+        <a routerLink="/products/add" class="btn btn-success"> ADD </a>
+      </nav>
+      </th>
+    </tr>
+    </thead>
+    <tbody >
+    <tr  *ngFor="let product of products">
+      <td>{{ product.id }}</td>
+      <td>{{ product.name }}</td>
+      <td>{{ product.price | currency : 'INR' }}</td>
+      <td>{{product.description}}</td>
+      <td>{{product.category.name}}</td>
+      <td>{{product.quantity}}</td>
+      <td> <img src="{{product.imageUrl}}"  class="img-fluid"  style="width: auto; height: 50px;" >  </td>
+      <td>
+         <button class="btn btn-secondary m-1"  (click)="onEdit(product.id)" >Edit</button>
+        <button class="btn btn-danger m-1" (click)="onDelete(product.id)">Del</button>
+      </td>
+
+    </tr>
+    </tbody>
+  </table>
+</div>
+<h2> {{ errorMsg }}</h2>
+

@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["angular:styles/component:css;f3af3effc9ea87174cb3f19c6259e038774cadf9dec5d2aa316ba30071400926;E:/Git public/Demo Spring Angular/Demo-Spring-Angular/AngularFrontend/OddStore/src/app/product-list/product-list.component.ts"],
-  "sourcesContent": ["\n    table {\n      width: 100%;\n    }\n\n    tr:nth-child(even) {\n      background-color: #773838;\n    }\n  "],
-  "mappings": "AACI,MACE,MAAO,IACT,CAEA,EAAE,eACA,iBAAkB,OACpB",
-  "names": []
-}
