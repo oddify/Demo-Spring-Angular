@@ -3,18 +3,24 @@
 
 
 server:
-  port: 4727
+  port: ${server.port}
 
 
 spring:
   application:
     name: productService
 
-  datasource:
+#  datasource:
     url: jdbc:mysql://localhost:3306/product_service
     username: product_service_user
     password: password
     driver-class-name: com.mysql.cj.jdbc.Driver
+#  datasource:
+#    url: jdbc:mysql://database-1.ctksgogkk739.ap-southeast-2.rds.amazonaws.com:3306/admin?useSSL=true&requireSSL=true&verifyServerCertificate=true
+#    username: admin
+#    password: password
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    set dilect
 
 #    enable web alpplication logs
 
@@ -22,6 +28,9 @@ spring:
   jpa:
     hibernate:
       ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
     show-sql: true
   activemq:
     broker-url:
